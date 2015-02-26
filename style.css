@@ -1,0 +1,24 @@
+@media only screen and (max-width: 767px) {
+    /* phones */
+
+body {
+font-size: 40.5%;
+}
+
+#catName {
+    font-size: 4.2em;
+}
+
+.clicks {
+    font-size: 4.3em;
+}
+
+footer {
+    font-size: 3.9em;
+}
+
+li {
+    font-size: 95%;
+}
+
+}
