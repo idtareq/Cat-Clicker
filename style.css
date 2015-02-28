@@ -22,3 +22,12 @@ li {
 }
 
 }
+
+@media only screen and (max-height : 480px) and (orientation:landscape) {  
+
+.catimg {
+	height:200px;
+	width: auto;
+}
+
+}
