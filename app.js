@@ -124,11 +124,11 @@ var view = {
         clicks.text(data[2]);
 
         var img = $(".imagecontainer img");
-        img.fadeOut("300",function () {
+        img.fadeTo("slow",0 ,function () {
             var newimg = new Image();
             $(newimg).on("load",function() {
                 img.attr('src',octopus.get_cat_src());
-                img.fadeIn("300");
+                img.fadeTo("slow",1);
                 newimg.remove();
             }).attr('src', octopus.get_cat_src());
         });
