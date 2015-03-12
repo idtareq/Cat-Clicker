@@ -43,6 +43,9 @@ var octopus = {
     get_cat_src : function () {
         return model.get_current_cat()[1];
     },
+    get_cat_clicks : function () {
+        return model.get_current_cat()[2];
+    },
     click_admin : function () {
         view.render_admin(model.get_current_cat());
     },
@@ -59,7 +62,7 @@ var view = {
         var clicks = $(".clicks");
         $(".rippler").click(function(e){
             octopus.click_cat();
-            clicks.text(parseInt(clicks.text())+1);
+            clicks.text( octopus.get_cat_clicks() );
             // var box = $("body");
             // var x = e.pageX; var y = e.pageY;
             // var clickY = y - box.offset().top; var clickX = x - box.offset().left;
@@ -119,7 +122,7 @@ var view = {
     render_cat : function (data) {
         var catname = $("#catName");
         catname.text(data[0]);
-        var clicks = $("#Main p");
+        var clicks = $(".clicks");
         clicks.text(data[2]);
 
         var img = $(".imagecontainer img");
