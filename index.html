@@ -2,103 +2,31 @@
 <html>
 <head>
 	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>Cat Clicker</title>	
     <!-- <link rel="stylesheet" href="bootstrap.min.css"> -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css"> 
 
      <link rel="stylesheet" href="jquery.sidr.light.css">
-    <style>
-         @import url('http://fonts.googleapis.com/css?family=Montserrat|Bitter'); 
-        html {
-        overflow-y: scroll; 
-        }
-        body {
-            font-family: 'Montserrat';
-            font-size: 62.5%;
-            padding-top: 10px;
-        }
-        .clicks {
-            font-size: 4.5em;
-        }
-        #admin,#admin_button {
-            font-size: 2.5em;
-        }
-        #simple-menu {
-            font-size: 4.5em;
-        }
-        li {
-            font-size: 100%;
-            font-weight: bold;
-        }
-        footer {
-            font-size: 3em;
-        }
-        #catName {
-            font-size: 4.5em;
-        }
-        svg {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 200%;
-          pointer-events: none;
-        }
-        circle {
-          fill: rgba(255,55,55,0.5);
-          pointer-events: none;
-        }
-        .catimg {
-            width: 100%;
-            max-width: 800px;
-            display: block;
-            margin: 7px auto;
-            height: auto;
-        }
-        .imagecontainer {
-            background: url('loading.GIF') 0 0 no-repeat;
-            background-position: center center;
-            min-height: 70px;
-        }
-
-    </style>
+     <link rel="stylesheet" href="rippler.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
-    <div class="container-fluid">
+    <div class="container-fluid" style="max-width: 1200px;">
     <div class="row-fluid">
-        <div class="col col-xs-12">
-           <a id="simple-menu" class="label label-primary" href="#sidr">Pick a cat</a>
-            <br>
-            <br>
-            <br>
+        <div class="col col-xs-3">
+           <a id="simple-menu" style="margin:0.1em;float: left;" class="label label-primary" href="#sidr">Pick a cat</a>
             <div id="sidr">
               <!-- Your content -->
               <ul id="LeftSide" >
               </ul>
             </div>
         </div>
-    </div>
-      <div class="row-fluid">
-
-        <div class="col col-xs-12">
-          
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                <h3 id="catName" class="panel-title"></h3>
-            </div>
-            <div id="Main" class="panel-body">
-                <p class="label label-success clicks"></p>
-                <br><br>
-                <div class="imagecontainer img-responsive">
-                    <img src="https://i.imgur.com/dQX78lP.jpg" class="catimg img-rounded">
-                </div>
-            </div>
-
-            <a id="admin_button" style="margin:0.5em;" class="label label-danger" href="#">Admin</a>
-            <div id="admin" style="margin:0.5em 0.5em 0 0.5em;display:none;">
+        <div class="col col-xs-9">
+            <a id="admin_button" style="margin:0.1em;float: right;" class="label label-danger" href="#">Admin</a>
+            <div style="clear:both;">
+            <div id="admin" style="margin:0.1em;display:none;float:right;">
 
               <div class="input-group">
               <input placeholder="Cat Name" class="form-control" id="cat_name" name="cat_name" type="text">
@@ -111,9 +39,30 @@
                 <input class="btn btn-sm btn-info" type="button" id="cancel" name="cancel" value="Cancel">
               </div>
             </div>
-            <br><br>
-            <br>
+        </div>
+        </div>
+      </div>
+      <div class="row-fluid">
 
+        <div class="col col-xs-12">
+          
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <span id="catName" class="panel-title"> </span> &nbsp; <span class="badge clicks">0</span>
+            </div>
+
+
+            <div id="Main" class="panel-body">
+                <div class="imagecontainer img-responsive">
+                    <span class="catimg rippler rippler-img rippler-default">
+                      <img src="https://i.imgur.com/dQX78lP.jpg" class="catimg img-rounded">
+                    </span>
+                </div>
+            </div>
+
+
+
+            
 
         </div>
 
@@ -121,10 +70,11 @@
         </div><!--/span-->
       </div><!--/row-->
 
-      <hr>
 
-      <footer>
-        <p>idtareq 2015</p>
+
+      <footer  class="row-fluid">
+        <div class="col col-xs-12"><p>idtareq 2015</p></div>
+        
       </footer>
 
     </div> 
@@ -138,9 +88,19 @@
 
     <script src="app.js" type="text/javascript"></script>
     <script src="jquery.sidr.min.js" type="text/javascript"></script>
+    <script src="jquery.rippler.min.js" type="text/javascript"></script>
+    
     <script>
         $(document).ready(function() {
           $('#simple-menu').sidr();
+
+          $(".rippler").rippler({
+            effectClass      :  'rippler-effect'
+            ,effectSize      :  16      // Default size (width & height)
+            ,addElement      :  'div'   // e.g. 'svg'(feature)
+            ,duration        :  800
+          });
+
         });
 
     </script>

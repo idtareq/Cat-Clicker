@@ -56,22 +56,21 @@ var octopus = {
 var view = {
     init : function () {
         /// Image clicks and Ripple effect
-        var img = $("#Main img");
-        var clicks = $("#Main p");
-        img.click(function(e){
+        var clicks = $(".clicks");
+        $(".rippler").click(function(e){
             octopus.click_cat();
             clicks.text(parseInt(clicks.text())+1);
-            var box = $("body");
-            var x = e.pageX; var y = e.pageY;
-            var clickY = y - box.offset().top; var clickX = x - box.offset().left;
-            var setX = parseInt(clickX); var setY = parseInt(clickY);
-            box.append('<svg><circle cx="'+setX+'" cy="'+setY+'" r="'+0+'"></circle></svg>');
-            var c = box.find("circle");
-            c.animate({"r" : box.outerWidth()}, {easing: "easeOutQuad",duration: 100,
-                step : function(val){
-                          c.attr("r", val/8);
-                },
-                complete:  function() { box.find("svg").remove(); }});
+            // var box = $("body");
+            // var x = e.pageX; var y = e.pageY;
+            // var clickY = y - box.offset().top; var clickX = x - box.offset().left;
+            // var setX = parseInt(clickX); var setY = parseInt(clickY);
+            // box.append('<svg><circle cx="'+setX+'" cy="'+setY+'" r="'+0+'"></circle></svg>');
+            // var c = box.find("circle");
+            // c.animate({"r" : box.outerWidth()}, {easing: "easeOutQuad",duration: 100,
+            //     step : function(val){
+            //               c.attr("r", val/8);
+            //     },
+            //     complete:  function() { box.find("svg").remove(); }});
         });
 
         /// ADMIN 
