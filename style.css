@@ -18,9 +18,11 @@ html *
 .label {
 	font-size: 135% !important;
 }
+
 .container-fluid {
-  padding-top: 6px;
+  	padding-top: 6px;
 }
+
 footer p {
     color: rgb(82, 79, 79);
   	padding-left: 5px;
