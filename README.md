@@ -1,4 +1,4 @@
 # Cat-Clicker
 
 Demo:
-http://idtareq.tk/cats/
+http://idtareq.github.io/Cat-Clicker/
